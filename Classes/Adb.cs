@@ -11,7 +11,7 @@ namespace Handyb
 {
     class Adb
     {
-        private static readonly Regex REGEX_DEVICES = new Regex(@"^([a-z0-9_-]+(?:\s?[\.a-z0-9_-]+)?(?:\:\d{1,})?)\s+(bootloader|device|download|offline|recovery|sideload|unauthorized|unknown)(?:\s+product:([\S]+)\s+model\:([\S]+)\s+device\:([\S]+))?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        private static readonly Regex REGEX_DEVICES = new Regex(@"^([a-z0-9_-]+(?:\s?[\.a-z0-9_-]+)?(?:\:\d{1,})?)\s+(bootloader|device|download|offline|recovery|sideload|unauthorized|unknown)(?:\s+(?:product:([^\s]+)))?(?:\s+(?:model:([^\s]+)))?(?:\s+(?:device:([^\s]+)))?(?:\s+(?:transport_id:(\d)))$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         private static readonly Regex REGEX_GETPROP = new Regex(@"^\[([^]]+)\]\:\s*\[(.*)\]$", RegexOptions.Compiled);
 
